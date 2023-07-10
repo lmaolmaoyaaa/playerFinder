@@ -36,9 +36,10 @@ function findPlayer:FindPlayerByString(text)
 	local target
 
 	for i, v in pairs(game:GetService("Players"):GetPlayers()) do
-		if string.sub(string.lower(v.Name), 0, string.len(text)) == string.lower(text) then
-			if v ~= nil then
+	if string.sub(string.lower(v.Name), 0, string.len(text)) == string.lower(text) or string.sub(string.lower(v.DisplayName), 0, string.len(text)) == string.lower(text) then
+		    if v ~= nil then
 				target = v
+				
 			end
 		end
 	end
